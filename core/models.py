@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+
 # Create your models here.
 class Pet(models.Model):
     """Represents a pet owned by a user."""
@@ -95,4 +96,20 @@ class Review(models.Model):
         # Show rating and reviewer for clarity
         return f"Review {self.rating}/5 by {self.written_by.username}"1 
     
-    
+class SitterAvailability(models.Model):
+    """Represents a sitter's available dates."""
+
+    # The sitter who owns this availability entry
+    sitter = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="availability"
+    )
+
+    # The date the sitter is available
+    date = models.DateField()
+
+    # Whether the sitter is available on this date
+    is_available = models.BooleanField(default=True)
+
+    def __str__(self):
+        # Show sitter and date for admin clarity
+        return f"{self.sitter.username} - {self.date}"   
