@@ -65,3 +65,34 @@ class Booking(models.Model):
     def __str__(self):
         # Show pet name and status for admin readability
         return f"Booking for {self.pet.name} ({self.status})"
+    
+class Review(models.Model):
+    """Review left after a booking is completed."""
+
+    # One review per booking
+    booking = models.OneToOneField(
+        Booking, on_delete=models.CASCADE, related_name="review"
+    )
+
+    # The user who wrote the review
+    written_by = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="reviews_written"
+    )
+
+    # The user receiving the review (usually the sitter)
+    written_for = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="reviews_received"
+    )
+
+    # Rating score and optional comment
+    rating = models.IntegerField()
+    comment = models.TextField()
+
+    # Auto-set timestamp
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        # Show rating and reviewer for clarity
+        return f"Review {self.rating}/5 by {self.written_by.username}"1 
+    
+    
