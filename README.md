@@ -1,13 +1,6 @@
 ﻿# pet_sitter
 
 
-## Code Authorship
-
-All code in this project was written by me. I used documentation,
-tutorials, and guidance from Code Institute > "Developing with Django" to learn Django, but I typed, adapted,
-and understood every line myself. No code was copied from other
-projects or repositories.
-
 ## Data Models
 
 The project uses four core models:
@@ -26,3 +19,11 @@ Stores the available dates for each sitter.
 
 These models form the foundation of the Pet Sitter platform and
 enable CRUD operations, user interactions, and booking workflows.
+
+
+## Code Authorship
+
+All code in this project was written by me. I used documentation,
+tutorials, and guidance from Code Institute > "Developing with Django" to learn Django, but I typed, adapted,
+and understood every line myself. No code was copied from other
+projects or repositories.
