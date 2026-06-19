@@ -94,7 +94,7 @@ class Review(models.Model):
 
     def __str__(self):
         # Show rating and reviewer for clarity
-        return f"Review {self.rating}/5 by {self.written_by.username}"1 
+        return f"Review {self.rating}/5 by {self.written_by.username}" 
     
 class SitterAvailability(models.Model):
     """Represents a sitter's available dates."""
