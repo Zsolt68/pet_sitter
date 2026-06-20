@@ -3,4 +3,4 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def home(request):
-    return HttpResponse("Pet Sitter Home Page")
+    return render(request, "core/home.html")
