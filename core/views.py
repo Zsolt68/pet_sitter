@@ -1,4 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
+from .models import Pet
+from .forms import PetForm
 
 # Core placeholder views for each page in the site
 
