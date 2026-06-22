@@ -43,3 +43,16 @@ def pet_create(request):
     else:
         form = PetForm()
     return render(request, "core/pets/form.html", {"form": form, "title": "Add Pet"})
+
+# Handle editing an existing pet owned by the logged‑in user
+@login_required
+def pet_update(request, pk):
+    pet = get_object_or_404(Pet, pk=pk, owner=request.user)
+    if request.method == "POST":
+        form = PetForm(request.POST, instance=pet)
+        if form.is_valid():
+            form.save()
+            return redirect("pet_list")
+    else:
+        form = PetForm(instance=pet)
+    return render(request, "core/pets/form.html", {"form": form, "title": "Edit Pet"})
