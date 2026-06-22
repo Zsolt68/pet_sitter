@@ -22,3 +22,10 @@ def login(request):
 
 def register(request):
     return render(request, "core/register.html")
+
+# Display a list of pets that belong to the currently logged‑in user.
+# Requires authentication; unauthenticated users are redirected to login.
+@login_required
+def pet_list(request):
+    pets = Pet.objects.filter(owner=request.user)
+    return render(request, "core/pets/list.html", {"pets": pets})
