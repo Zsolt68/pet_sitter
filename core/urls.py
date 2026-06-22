@@ -13,5 +13,3 @@ urlpatterns = [
     path("pets/list/", views.pet_list, name="pet_list"),
 
 ]
-
-

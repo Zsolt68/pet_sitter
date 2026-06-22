@@ -29,3 +29,17 @@ def register(request):
 def pet_list(request):
     pets = Pet.objects.filter(owner=request.user)
     return render(request, "core/pets/list.html", {"pets": pets})
+
+# Handle creating a new pet for the logged‑in user
+@login_required
+def pet_create(request):
+    if request.method == "POST":
+        form = PetForm(request.POST)
+        if form.is_valid():
+            pet = form.save(commit=False)
+            pet.owner = request.user
+            pet.save()
+            return redirect("pet_list")
+    else:
+        form = PetForm()
+    return render(request, "core/pets/form.html", {"form": form, "title": "Add Pet"})
