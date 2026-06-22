@@ -8,4 +8,10 @@ urlpatterns = [
     path("sitters/", views.sitters, name="sitters"),
     path("login/", views.login_view, name="login"),
     path("register/", views.register, name="register"),
+    
+    # List pets belonging to the logged‑in user
+    path("pets/list/", views.pet_list, name="pet_list"),
+
 ]
+
+
