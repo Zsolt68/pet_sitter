@@ -9,7 +9,7 @@ urlpatterns = [
     path("login/", views.login, name="login"),
     path("register/", views.register, name="register"),
     
-    # List pets belonging to the logged‑in user
+    # List pets belonging to the logged‑in user or Pet CRUD
     path("pets/list/", views.pet_list, name="pet_list"),
     path("pets/add/", views.pet_create, name="pet_create"),
     path("pets/<int:pk>/edit/", views.pet_update, name="pet_update"),
