@@ -14,4 +14,11 @@ urlpatterns = [
     path("pets/add/", views.pet_create, name="pet_create"),
     path("pets/<int:pk>/edit/", views.pet_update, name="pet_update"),
     path("pets/<int:pk>/delete/", views.pet_delete, name="pet_delete"),
+
+    # List bookings belonging to the logged‑in user or Booking CRUD
+    path("bookings/list/", views.booking_list, name="booking_list"),
+    path("bookings/add/", views.booking_create, name="booking_create"),
+    path("bookings/<int:pk>/edit/", views.booking_update, name="booking_update"),
+    path("bookings/<int:pk>/delete/", views.booking_delete, name="booking_delete"),
+
 ]
