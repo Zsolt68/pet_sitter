@@ -56,3 +56,13 @@ def pet_update(request, pk):
     else:
         form = PetForm(instance=pet)
     return render(request, "core/pets/form.html", {"form": form, "title": "Edit Pet"})
+
+# Handle deleting an existing pet owned by the logged‑in user
+@login_required
+def pet_delete(request, pk):
+    pet = get_object_or_404(Pet, pk=pk, owner=request.user)
+    if request.method == "POST":
+        pet.delete()
+        return redirect("pet_list")
+    return render(request, "core/pets/delete.html", {"pet": pet})
+
