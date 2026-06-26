@@ -58,7 +58,10 @@ def pet_update(request, pk):
         form = PetForm(request.POST, instance=pet)
         if form.is_valid():
             form.save()
+            messages.success(request, "Pet updated successfully.")
             return redirect("pet_list")
+        else:
+            messages.error(request, "Please correct the errors below.")
     else:
         form = PetForm(instance=pet)
     return render(request, "core/pets/form.html", {"form": form, "title": "Edit Pet"})
@@ -69,6 +72,7 @@ def pet_delete(request, pk):
     pet = get_object_or_404(Pet, pk=pk, owner=request.user)
     if request.method == "POST":
         pet.delete()
+        messages.success(request, "Pet deleted successfully.")
         return redirect("pet_list")
     return render(request, "core/pets/delete.html", {"pet": pet})
 
@@ -86,7 +90,10 @@ def booking_create(request):
             booking = form.save(commit=False)
             booking.owner = request.user
             booking.save()
+            messages.success(request, "Booking created successfully.")
             return redirect("booking_list")
+        else:
+            messages.error(request, "Please correct the errors below.")
     else:
         form = BookingForm()
     return render(request, "core/bookings/form.html", {"form": form, "title": "Add Booking"})
@@ -98,7 +105,10 @@ def booking_update(request, pk):
         form = BookingForm(request.POST, instance=booking)
         if form.is_valid():
             form.save()
+            messages.success(request, "Booking updated successfully.")
             return redirect("booking_list")
+        else:
+            messages.error(request, "Please correct the errors below.")
     else:
         form = BookingForm(instance=booking)
     return render(request, "core/bookings/form.html", {"form": form, "title": "Edit Booking"})
@@ -108,6 +118,7 @@ def booking_delete(request, pk):
     booking = get_object_or_404(Booking, pk=pk, owner=request.user)
     if request.method == "POST":
         booking.delete()
+        messages.success(request, "Booking deleted successfully.")
         return redirect("booking_list")
     return render(request, "core/bookings/delete.html", {"booking": booking})
 
