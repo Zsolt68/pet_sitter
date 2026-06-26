@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Pet
@@ -41,7 +42,10 @@ def pet_create(request):
             pet = form.save(commit=False)
             pet.owner = request.user
             pet.save()
+            messages.success(request, "Pet added successfully.")
             return redirect("pet_list")
+        else:
+            messages.error(request, "Please correct the errors below.")        
     else:
         form = PetForm()
     return render(request, "core/pets/form.html", {"form": form, "title": "Add Pet"})
