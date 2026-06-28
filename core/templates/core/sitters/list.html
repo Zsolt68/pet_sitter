@@ -1,0 +1,24 @@
+<!-- Sitters list template -->
+{% extends "core/base.html" %}
+{% block title %}Sitters{% endblock %}
+{% block content %}
+<h2>Sitters</h2>
+
+<a href="{% url 'sitter_create' %}" class="btn btn-primary mb-3">Add Sitter</a>
+
+{% if sitters %}
+<ul class="list-group">
+    {% for sitter in sitters %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <span>{{ sitter.name }} ({{ sitter.experience }} years)</span>
+        <span>
+            <a href="{% url 'sitter_update' sitter.pk %}" class="btn btn-sm btn-warning">Edit</a>
+            <a href="{% url 'sitter_delete' sitter.pk %}" class="btn btn-sm btn-danger">Delete</a>
+        </span>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No sitters added yet.</p>
+{% endif %}
+{% endblock %}
