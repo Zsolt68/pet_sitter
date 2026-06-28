@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from .models import Pet, Booking, Review
 from .forms import PetForm
 from .forms import BookingForm
+from .forms import SitterForm
 
 # Core placeholder views for each page in the site
 
