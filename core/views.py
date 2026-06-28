@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from .models import Pet, Booking, Review, Sitter
+from .models import Pet, Booking, Review
 from .forms import PetForm
 from .forms import BookingForm
 
@@ -127,7 +127,7 @@ def booking_delete(request, pk):
 # Display all sitters in a list
 @login_required
 def sitter_list(request):
-    sitters = Sitter.objects.all()
+    sitters = Users.objects.all()
     return render(request, "sitters/sitter_list.html", {"sitters": sitters})    
 
 # Create a new sitter and display a success message after saving
