@@ -23,5 +23,8 @@ urlpatterns = [
 
     # List sitters belonging to the logged‑in user or Sitter CRUD
     path("sitters/list/", views.sitter_list, name="sitter_list"),
+    path("sitters/create/", views.sitter_create, name="sitter_create"),
+    path("sitters/update/<int:pk>/", views.sitter_update, name="sitter_update"),
+    path("sitters/delete/<int:pk>/", views.sitter_delete, name="sitter_delete"),
 
 ]
