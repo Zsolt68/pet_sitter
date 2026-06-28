@@ -26,11 +26,11 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pets">Pets</a></li>
-                    <li class="nav-item"><a class="nav-link" href="bookings">Bookings</a></li>
-                    <li class="nav-item"><a class="nav-link" href="sitters">Sitters</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login">Login</a></li>
-                    <li class="nav-item"><a class="nav-link" href="register">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'pet_list' %}">Pets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'booking_list' %}">Bookings</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'sitter_list' %}">Sitters</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Register</a></li>
                 </ul>
             </div>
         </div>
