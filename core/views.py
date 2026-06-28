@@ -90,6 +90,7 @@ def booking_create(request):
             booking = form.save(commit=False)
             booking.owner = request.user
             booking.save()
+            # Display success message after creating a booking
             messages.success(request, "Booking created successfully.")
             return redirect("booking_list")
         else:
@@ -105,6 +106,7 @@ def booking_update(request, pk):
         form = BookingForm(request.POST, instance=booking)
         if form.is_valid():
             form.save()
+            # Display success message after updating a booking
             messages.success(request, "Booking updated successfully.")
             return redirect("booking_list")
         else:
@@ -118,7 +120,52 @@ def booking_delete(request, pk):
     booking = get_object_or_404(Booking, pk=pk, owner=request.user)
     if request.method == "POST":
         booking.delete()
+        # Display success message after deleting a booking
         messages.success(request, "Booking deleted successfully.")
         return redirect("booking_list")
     return render(request, "core/bookings/delete.html", {"booking": booking})
+
+@login_required
+def sitter_create(request):
+    if request.method == "POST":
+        form = SitterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # Success message for sitter creation
+            messages.success(request, "Sitter added successfully.")
+            return redirect("sitter_list")
+    else:
+        form = SitterForm()
+
+    return render(request, "sitters/sitter_form.html", {"form": form})
+
+@login_required
+def sitter_update(request, pk):
+    sitter = get_object_or_404(Sitter, pk=pk)
+
+    if request.method == "POST":
+        form = SitterForm(request.POST, instance=sitter)
+        if form.is_valid():
+            form.save()
+            # Success message for sitter update
+            messages.success(request, "Sitter updated successfully.")
+            return redirect("sitter_list")
+    else:
+        form = SitterForm(instance=sitter)
+
+    return render(request, "sitters/sitter_form.html", {"form": form})
+
+@login_required    
+def sitter_delete(request, pk):
+    sitter = get_object_or_404(Sitter, pk=pk)
+
+    if request.method == "POST":
+        sitter.delete()
+        # Success message for sitter deletion
+        messages.success(request, "Sitter deleted successfully.")
+        return redirect("sitter_list")
+
+    return render(request, "sitters/sitter_confirm_delete.html", {"sitter": sitter})
+
+
 
