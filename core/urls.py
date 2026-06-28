@@ -21,4 +21,7 @@ urlpatterns = [
     path("bookings/<int:pk>/edit/", views.booking_update, name="booking_update"),
     path("bookings/<int:pk>/delete/", views.booking_delete, name="booking_delete"),
 
+    # List sitters belonging to the logged‑in user or Sitter CRUD
+    path("sitters/list/", views.sitter_list, name="sitter_list"),
+
 ]
