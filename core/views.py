@@ -125,6 +125,7 @@ def booking_delete(request, pk):
         return redirect("booking_list")
     return render(request, "core/bookings/delete.html", {"booking": booking})
 
+# Create a new sitter and display a success message after saving
 @login_required
 def sitter_create(request):
     if request.method == "POST":
@@ -139,6 +140,7 @@ def sitter_create(request):
 
     return render(request, "sitters/sitter_form.html", {"form": form})
 
+# Update an existing sitter and show a success message when changes are saved
 @login_required
 def sitter_update(request, pk):
     sitter = get_object_or_404(Sitter, pk=pk)
@@ -155,6 +157,7 @@ def sitter_update(request, pk):
 
     return render(request, "sitters/sitter_form.html", {"form": form})
 
+# Delete a sitter after confirmation and show a success message
 @login_required    
 def sitter_delete(request, pk):
     sitter = get_object_or_404(Sitter, pk=pk)
