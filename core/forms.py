@@ -10,8 +10,6 @@ class PetForm(forms.ModelForm):
         fields = ["name", "species", "breed", "age", "notes"]
 
 # Form for creating and editing Booking instances
-from .models import Booking
-
 class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
@@ -25,7 +23,7 @@ class BookingForm(forms.ModelForm):
         ]
 
 # Custom validation for date order and overlapping bookings
-def clean(self):
+    def clean(self):
         cleaned_data = super().clean()
         pet = cleaned_data.get("pet")
         start = cleaned_data.get("start_date")
