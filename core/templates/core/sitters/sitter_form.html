@@ -1,0 +1,23 @@
+<!-- Sitter create/update form template -->
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Page heading -->
+<h2>{{ form.instance.pk|yesno:"Edit Sitter,Add Sitter" }}</h2>
+
+<!-- Sitter form -->
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary">
+        Save
+    </button>
+
+    <!-- Back to sitter list -->
+    <a href="{% url 'sitter_list' %}" class="btn btn-secondary">
+        Cancel
+    </a>
+</form>
+{% endblock %}
