@@ -1,0 +1,50 @@
+<!-- Sitter list template -->
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Page heading -->
+<h1>Sitters</h1>
+
+<!-- Button to create a new sitter -->
+<a href="{% url 'sitter_create' %}" class="btn btn-primary mb-3">Add Sitter</a>
+
+<!-- Table displaying all sitters -->
+<table class="table">
+    <thead>
+        <tr>
+            <!-- Column headers -->
+            <th>Username</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <!-- Loop through all sitters passed from the view -->
+        {% for sitter in sitters %}
+        <tr>
+            <!-- Display sitter username -->
+            <td>{{ sitter.username }}</td>
+
+            <!-- Display sitter email -->
+            <td>{{ sitter.email }}</td>
+
+            <!-- Edit/Delete action buttons -->
+            <td>
+                <a href="{% url 'sitter_update' sitter.id %}"
+                   class="btn btn-sm btn-warning">Edit</a>
+
+                <a href="{% url 'sitter_delete' sitter.id %}"
+                   class="btn btn-sm btn-danger">Delete</a>
+            </td>
+        </tr>
+
+        {% empty %}
+        <!-- Message when no sitters exist -->
+        <tr>
+            <td colspan="3">No sitters found.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -129,7 +129,7 @@ def booking_delete(request, pk):
 # Display all sitters in a list
 @login_required
 def sitter_list(request):
-    sitters = Users.objects.all()
+    sitters = User.objects.all()
     return render(request, "sitters/sitter_list.html", {"sitters": sitters})    
 
 # Create a new sitter and display a success message after saving
