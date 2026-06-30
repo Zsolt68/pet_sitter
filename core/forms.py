@@ -3,6 +3,7 @@ from django import forms
 from .models import Pet
 from django.core.exceptions import ValidationError
 from .models import Booking
+from django.contrib.auth.models import User
 
 class PetForm(forms.ModelForm):
     class Meta:
@@ -49,3 +50,9 @@ class BookingForm(forms.ModelForm):
                 raise ValidationError("This pet already has a booking during that time.")
 
         return cleaned_data
+
+# Form for creating and editing Sitter (User) instances
+class SitterForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ["username", "first_name", "last_name", "email"]        
