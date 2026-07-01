@@ -150,7 +150,7 @@ def sitter_create(request):
 # Update an existing sitter and show a success message when changes are saved
 @login_required
 def sitter_update(request, pk):
-    sitter = get_object_or_404(Sitter, pk=pk)
+    sitter = get_object_or_404(User, pk=pk)
 
     if request.method == "POST":
         form = SitterForm(request.POST, instance=sitter)
@@ -167,7 +167,7 @@ def sitter_update(request, pk):
 # Delete a sitter after confirmation and show a success message
 @login_required    
 def sitter_delete(request, pk):
-    sitter = get_object_or_404(Sitter, pk=pk)
+    sitter = get_object_or_404(User, pk=pk)
 
     if request.method == "POST":
         sitter.delete()
