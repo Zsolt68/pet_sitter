@@ -112,4 +112,5 @@ class SitterAvailability(models.Model):
 
     def __str__(self):
         # Show sitter and date for admin clarity
-        return f"{self.sitter.username} - {self.date}"   
+        return f"{self.sitter.username} - {self.date}"
+    

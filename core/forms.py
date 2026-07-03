@@ -4,6 +4,7 @@ from .models import Pet
 from django.core.exceptions import ValidationError
 from .models import Booking
 from django.contrib.auth.models import User
+from .models import SitterAvailability
 
 class PetForm(forms.ModelForm):
     class Meta:
@@ -55,4 +56,13 @@ class BookingForm(forms.ModelForm):
 class SitterForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ["username", "first_name", "last_name", "email"]        
+        fields = ["username", "first_name", "last_name", "email"]
+
+# Form for creating and editing sitter availability entries
+class SitterAvailabilityForm(forms.ModelForm):
+    class Meta:
+        # Use the SitterAvailability model defined in models.py
+        model = SitterAvailability
+
+        # Fields shown in the form: sitter, date, and availability flag
+        fields = ["sitter", "date", "is_available"]
