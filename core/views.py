@@ -8,7 +8,7 @@ from .forms import SitterAvailability, SitterForm, SitterAvailabilityForm
 # Core placeholder views for each page in the site
 
 def home(request):
-    return render(request, "core/home.html")
+    return render(request, "home.html")
 
 def pets(request):
     return render(request, "core/pets.html")
@@ -20,10 +20,10 @@ def sitters(request):
     return render(request, "core/sitters.html")
 
 def login(request):
-    return render(request, "core/login.html")
+    return render(request, "login.html")
 
 def register(request):
-    return render(request, "core/register.html")
+    return render(request, "register.html")
 
 # Display a list of pets that belong to the currently logged‑in user.
 # Requires authentication; unauthenticated users are redirected to login.
