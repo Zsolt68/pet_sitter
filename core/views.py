@@ -1,3 +1,4 @@
+from django.contrib.auth import authenticate, login as auth_login
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -20,6 +21,23 @@ def sitters(request):
     return render(request, "core/sitters.html")
 
 def login(request):
+    if request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            auth_login(request, user)
+
+            # Handle ?next=/availability/ redirect
+            next_url = request.GET.get("next")
+            if next_url:
+                return redirect(next_url)
+
+            return redirect("home")
+
+        return render(request, "login.html", {"error": "Invalid username or password"})
     return render(request, "login.html")
 
 def register(request):
