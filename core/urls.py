@@ -1,5 +1,11 @@
 from django.urls import path
 from . import views
+from .views import (
+    pet_list, pet_create, pet_update, pet_delete,
+    booking_list, booking_create, booking_update, booking_delete,
+    sitter_list, sitter_create, sitter_update, sitter_delete,
+    availability_list, availability_create, availability_update, availability_delete,
+)
 
 urlpatterns = [
     path('', views.home, name='home'),
@@ -32,6 +38,5 @@ urlpatterns = [
     path("availability/create/", availability_create, name="availability_create"),
     path("availability/update/<int:pk>/", availability_update, name="availability_update"),
     path("availability/delete/<int:pk>/", availability_delete, name="availability_delete"),
-
 
 ]
