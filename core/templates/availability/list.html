@@ -1,0 +1,17 @@
+<!-- Display sitter availability list with options to add, edit and delete entries -->
+<h1>Sitter Availability</h1>
+
+<a href="{% url 'availability_create' %}" class="btn btn-primary">Add Availability</a>
+
+<ul>
+    {% for a in availabilities %}
+        <li>
+            {{ a.sitter.username }} — {{ a.date }} — 
+            {% if a.is_available %}Available{% else %}Not Available{% endif %}
+            <a href="{% url 'availability_update' a.pk %}">Edit</a>
+            <a href="{% url 'availability_delete' a.pk %}">Delete</a>
+        </li>
+    {% empty %}
+        <li>No availability added yet.</li>
+    {% endfor %}
+</ul>
