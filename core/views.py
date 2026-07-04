@@ -1,11 +1,9 @@
-from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from .models import Pet, Booking, Review
-from .forms import PetForm
-from .forms import BookingForm
-from .forms import SitterForm
+from .models import Pet, Booking
+from .forms import SitterAvailability, SitterForm, SitterAvailabilityForm
 
 # Core placeholder views for each page in the site
 
@@ -176,6 +174,81 @@ def sitter_delete(request, pk):
         return redirect("sitter_list")
 
     return render(request, "sitters/sitter_confirm_delete.html", {"sitter": sitter})
+
+# List all sitter availability entries
+@login_required
+def availability_list(request):
+    # Fetch all availability records from the database
+    availabilities = SitterAvailability.objects.all()
+
+    # Render the list template with the availability data
+    return render(
+        request,
+        "availability/list.html",
+        {"availabilities": availabilities}
+    )
+
+# Create a new availability entry
+@login_required
+def availability_create(request):
+    if request.method == "POST":
+        # Bind POST data to the form
+        form = SitterAvailabilityForm(request.POST)
+
+        # Validate and save the new availability entry
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Availability added successfully.")
+            return redirect("availability_list")
+    else:
+        # Display an empty form for GET requests
+        form = SitterAvailabilityForm()
+
+    # Render the form template
+    return render(request, "availability/form.html", {"form": form})
+
+
+# Update an existing availability entry
+@login_required
+def availability_update(request, pk):
+    # Fetch the availability entry or return 404
+    availability = get_object_or_404(SitterAvailability, pk=pk)
+
+    if request.method == "POST":
+        # Bind POST data to the form with the existing instance
+        form = SitterAvailabilityForm(request.POST, instance=availability)
+
+        # Validate and save the updated entry
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Availability updated successfully.")
+            return redirect("availability_list")
+    else:
+        # Display the form with existing data for GET requests
+        form = SitterAvailabilityForm(instance=availability)
+
+    # Render the form template
+    return render(request, "availability/form.html", {"form": form})
+
+
+# Delete an availability entry after confirmation
+@login_required
+def availability_delete(request, pk):
+    # Fetch the availability entry or return 404
+    availability = get_object_or_404(SitterAvailability, pk=pk)
+
+    if request.method == "POST":
+        # Delete the entry and show a success message
+        availability.delete()
+        messages.success(request, "Availability deleted successfully.")
+        return redirect("availability_list")
+
+    # Render the delete confirmation template
+    return render(
+        request,
+        "availability/delete.html",
+        {"availability": availability}
+    )
 
 
 
