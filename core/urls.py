@@ -9,22 +9,29 @@ urlpatterns = [
     path("login/", views.login, name="login"),
     path("register/", views.register, name="register"),
     
-    # List pets belonging to the logged‑in user or Pet CRUD
+    # URL routes for pet CRUD: list, add, edit and delete
     path("pets/list/", views.pet_list, name="pet_list"),
     path("pets/add/", views.pet_create, name="pet_create"),
     path("pets/<int:pk>/edit/", views.pet_update, name="pet_update"),
     path("pets/<int:pk>/delete/", views.pet_delete, name="pet_delete"),
 
-    # List bookings belonging to the logged‑in user or Booking CRUD
+    # URL routes for booking CRUD: list, add, edit and delete
     path("bookings/list/", views.booking_list, name="booking_list"),
     path("bookings/add/", views.booking_create, name="booking_create"),
     path("bookings/<int:pk>/edit/", views.booking_update, name="booking_update"),
     path("bookings/<int:pk>/delete/", views.booking_delete, name="booking_delete"),
 
-    # List sitters belonging to the logged‑in user or Sitter CRUD
+    # URL routes for sitter CRUD: list, create, update and delete
     path("sitters/list/", views.sitter_list, name="sitter_list"),
     path("sitters/create/", views.sitter_create, name="sitter_create"),
     path("sitters/update/<int:pk>/", views.sitter_update, name="sitter_update"),
     path("sitters/delete/<int:pk>/", views.sitter_delete, name="sitter_delete"),
+
+    # URL routes for sitter availability CRUD: list, create, update and delete
+    path("availability/", availability_list, name="availability_list"),
+    path("availability/create/", availability_create, name="availability_create"),
+    path("availability/update/<int:pk>/", availability_update, name="availability_update"),
+    path("availability/delete/<int:pk>/", availability_delete, name="availability_delete"),
+
 
 ]
