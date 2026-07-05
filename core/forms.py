@@ -61,7 +61,7 @@ class BookingForm(forms.ModelForm):
 
         return cleaned_data
 
-# Form for creating and editing Sitter (User) instances
+# Form for creating and updating sitter profiles (using User model)
 class SitterForm(forms.ModelForm):
     class Meta:
         model = User

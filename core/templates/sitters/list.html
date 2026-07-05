@@ -10,7 +10,8 @@
 <ul class="list-group">
     {% for sitter in sitters %}
     <li class="list-group-item d-flex justify-content-between align-items-center">
-        <span>{{ sitter.name }} ({{ sitter.experience }} years)</span>
+        <span>{{ sitter.username }} ({{ sitter.email }})</span>
+
         <span>
             <a href="{% url 'sitter_update' sitter.pk %}" class="btn btn-sm btn-warning">Edit</a>
             <a href="{% url 'sitter_delete' sitter.pk %}" class="btn btn-sm btn-danger">Delete</a>
