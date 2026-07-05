@@ -12,13 +12,13 @@ def home(request):
     return render(request, "home.html")
 
 def pets(request):
-    return render(request, "core/pets.html")
+    return render(request, "pets.html")
 
 def bookings(request):
-    return render(request, "core/bookings.html")
+    return render(request, "bookings.html")
 
 def sitters(request):
-    return render(request, "core/sitters.html")
+    return render(request, "sitters.html")
 
 def login(request):
     if request.method == "POST":
@@ -48,7 +48,7 @@ def register(request):
 @login_required
 def pet_list(request):
     pets = Pet.objects.filter(owner=request.user)
-    return render(request, "core/pets/list.html", {"pets": pets})
+    return render(request, "pets/list.html", {"pets": pets})
 
 # Handle creating a new pet for the logged‑in user
 @login_required
@@ -65,7 +65,7 @@ def pet_create(request):
             messages.error(request, "Please correct the errors below.")        
     else:
         form = PetForm()
-    return render(request, "core/pets/form.html", {"form": form, "title": "Add Pet"})
+    return render(request, "pets/form.html", {"form": form, "title": "Add Pet"})
 
 # Handle editing an existing pet owned by the logged‑in user
 @login_required
@@ -81,7 +81,7 @@ def pet_update(request, pk):
             messages.error(request, "Please correct the errors below.")
     else:
         form = PetForm(instance=pet)
-    return render(request, "core/pets/form.html", {"form": form, "title": "Edit Pet"})
+    return render(request, "pets/form.html", {"form": form, "title": "Edit Pet"})
 
 # Handle deleting an existing pet owned by the logged‑in user
 @login_required
@@ -91,13 +91,13 @@ def pet_delete(request, pk):
         pet.delete()
         messages.success(request, "Pet deleted successfully.")
         return redirect("pet_list")
-    return render(request, "core/pets/delete.html", {"pet": pet})
+    return render(request, "pets/delete.html", {"pet": pet})
 
 # CRUD views for managing Booking records; includes list, create, and update
 @login_required
 def booking_list(request):
     bookings = Booking.objects.filter(owner=request.user)
-    return render(request, "core/bookings/list.html", {"bookings": bookings})
+    return render(request, "bookings/list.html", {"bookings": bookings})
 
 @login_required
 def booking_create(request):
@@ -114,7 +114,7 @@ def booking_create(request):
             messages.error(request, "Please correct the errors below.")
     else:
         form = BookingForm()
-    return render(request, "core/bookings/form.html", {"form": form, "title": "Add Booking"})
+    return render(request, "bookings/form.html", {"form": form, "title": "Add Booking"})
 
 @login_required
 def booking_update(request, pk):
@@ -130,7 +130,7 @@ def booking_update(request, pk):
             messages.error(request, "Please correct the errors below.")
     else:
         form = BookingForm(instance=booking)
-    return render(request, "core/bookings/form.html", {"form": form, "title": "Edit Booking"})
+    return render(request, "bookings/form.html", {"form": form, "title": "Edit Booking"})
 
 @login_required
 def booking_delete(request, pk):
@@ -140,7 +140,7 @@ def booking_delete(request, pk):
         # Display success message after deleting a booking
         messages.success(request, "Booking deleted successfully.")
         return redirect("booking_list")
-    return render(request, "core/bookings/delete.html", {"booking": booking})
+    return render(request, "bookings/delete.html", {"booking": booking})
 
 # Display all sitters in a list
 @login_required
