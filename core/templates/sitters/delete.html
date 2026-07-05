@@ -1,14 +1,24 @@
-<!-- Sitters delete confirmation template -->
+<!-- Sitter delete confirmation template -->
 {% extends "base.html" %}
-{% block title %}Delete Sitter{% endblock %}
+
 {% block content %}
+<!-- Page heading -->
 <h2>Delete Sitter</h2>
 
-<p>Are you sure you want to delete <strong>{{ sitter.username }}</strong>?</p>
+<!-- Confirmation message -->
+<p>Are you sure you want to delete
+   <strong>{{ sitter.username }}</strong>?</p>
 
+<!-- Delete form -->
 <form method="POST">
     {% csrf_token %}
-    <button class="btn btn-danger" type="submit">Delete</button>
-    <a href="{% url 'sitter_list' %}" class="btn btn-secondary">Cancel</a>
+    <button type="submit" class="btn btn-danger">
+        Delete
+    </button>
+
+    <!-- Cancel button -->
+    <a href="{% url 'sitter_list' %}" class="btn btn-secondary">
+        Cancel
+    </a>
 </form>
 {% endblock %}

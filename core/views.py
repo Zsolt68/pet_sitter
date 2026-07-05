@@ -159,7 +159,7 @@ def booking_delete(request, pk):
 @login_required
 def sitter_list(request):
     sitters = User.objects.all()
-    return render(request, "sitters/sitter_list.html", {"sitters": sitters})    
+    return render(request, "sitters/list.html", {"sitters": sitters})    
 
 # Create a new sitter and display a success message after saving
 @login_required
@@ -174,7 +174,7 @@ def sitter_create(request):
     else:
         form = SitterForm()
 
-    return render(request, "sitters/sitter_form.html", {"form": form})
+    return render(request, "sitters/form.html", {"form": form})
 
 # Update an existing sitter and show a success message when changes are saved
 @login_required
@@ -191,7 +191,7 @@ def sitter_update(request, pk):
     else:
         form = SitterForm(instance=sitter)
 
-    return render(request, "sitters/sitter_form.html", {"form": form})
+    return render(request, "sitters/form.html", {"form": form})
 
 # Delete a sitter after confirmation and show a success message
 @login_required    
@@ -204,7 +204,7 @@ def sitter_delete(request, pk):
         messages.success(request, "Sitter deleted successfully.")
         return redirect("sitter_list")
 
-    return render(request, "sitters/sitter_confirm_delete.html", {"sitter": sitter})
+    return render(request, "sitters/delete.html", {"sitter": sitter})
 
 # List all sitter availability entries
 @login_required
