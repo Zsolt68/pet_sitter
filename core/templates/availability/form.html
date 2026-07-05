@@ -1,8 +1,14 @@
-<!-- Form template for creating and updating sitter availability entries -->
-<h1>Availability Form</h1>
+<!-- Form template for creating or editing sitter availability entries with save/cancel actions -->
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mb-4">Availability Form</h1>
 
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
+
     <button type="submit" class="btn btn-success">Save</button>
+    <a href="{% url 'availability_list' %}" class="btn btn-secondary">Cancel</a>
 </form>
+{% endblock %}
