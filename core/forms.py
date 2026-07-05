@@ -23,6 +23,11 @@ class BookingForm(forms.ModelForm):
             "total_price",
             "status",
         ]
+        widgets = {
+            "start_date": forms.DateInput(attrs={"type": "date"}),
+            "end_date": forms.DateInput(attrs={"type": "date"}),
+            "total_price": forms.NumberInput(attrs={"step": "0.01"}),
+        }
 
 # Custom validation for date order and overlapping bookings
     def clean(self):
