@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import Pet, Booking
 from .forms import SitterAvailability, SitterForm, SitterAvailabilityForm
-from .forms import PetForm, BookingForm
+from .forms import PetForm, BookingForm, RegisterForm
 
 # Core placeholder views for each page in the site
 
@@ -41,8 +41,20 @@ def login(request):
         return render(request, "login.html", {"error": "Invalid username or password"})
     return render(request, "login.html")
 
+# Handle user registration with validation, messages and redirect to login
 def register(request):
-    return render(request, "register.html")
+    if request.method == "POST":
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Account created successfully. Please log in.")
+            return redirect("login")
+        else:
+            messages.error(request, "Please correct the errors below.")
+    else:
+        form = RegisterForm()
+
+    return render(request, "register.html", {"form": form})
 
 # Display a list of pets that belong to the currently logged‑in user.
 # Requires authentication; unauthenticated users are redirected to login.
