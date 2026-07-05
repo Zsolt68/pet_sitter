@@ -31,7 +31,7 @@ def login(request):
             auth_login(request, user)
 
             # Handle ?next=/availability/ redirect
-            next_url = request.GET.get("next")
+            next_url = request.POST.get("next") or request.GET.get("next")
             if next_url:
                 return redirect(next_url)
 
