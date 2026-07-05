@@ -1,11 +1,12 @@
-# Form for creating and editing Pet instances
 from django import forms
 from .models import Pet
 from django.core.exceptions import ValidationError
 from .models import Booking
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .models import SitterAvailability
 
+# Form for creating and editing Pet instances
 class PetForm(forms.ModelForm):
     class Meta:
         model = Pet
@@ -74,3 +75,9 @@ class SitterAvailabilityForm(forms.ModelForm):
 
         # Fields shown in the form: sitter, date, and availability flag
         fields = ["sitter", "date", "is_available"]
+
+# Form for creating new user accounts with built‑in Django validation
+class RegisterForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ["username", "password1", "password2"]
