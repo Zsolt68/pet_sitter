@@ -1,6 +1,27 @@
 {% extends "base.html" %}
-{% block title %}Login{% endblock %}
+
 {% block content %}
-<h2>Login Page</h2>
-<p>Coming soon...</p>
+<h2>Login</h2>
+
+{% if error %}
+    <p style="color:red;">{{ error }}</p>
+{% endif %}
+
+<form method="post">
+    {% csrf_token %}
+
+    <p>
+        <label>Username:</label><br>
+        <input type="text" name="username" required>
+    </p>
+
+    <p>
+        <label>Password:</label><br>
+        <input type="password" name="password" required>
+    </p>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>
+
 {% endblock %}
+
