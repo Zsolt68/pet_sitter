@@ -11,7 +11,7 @@ from .forms import SitterAvailability, SitterForm, SitterAvailabilityForm
 from .forms import PetForm, BookingForm, RegisterForm
 
 # Core placeholder views for each page in the site
-
+@login_required
 def home(request):
     return render(request, "home.html")
 
