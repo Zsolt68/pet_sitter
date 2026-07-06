@@ -14,13 +14,13 @@ from .forms import PetForm, BookingForm, RegisterForm
 @login_required
 def home(request):
     return render(request, "home.html")
-
+@login_required
 def pets(request):
     return render(request, "pets.html")
-
+@login_required
 def bookings(request):
     return render(request, "bookings.html")
-
+@login_required
 def sitters(request):
     return render(request, "sitters.html")
 
