@@ -1,15 +1,23 @@
 from django.contrib import admin
 from .models import Pet, Booking, Review, SitterAvailability
 
+
 @admin.register(Pet)
 class PetAdmin(admin.ModelAdmin):
     list_display = ("name", "species", "owner")
     search_fields = ("name", "species", "owner__username")
     list_filter = ("species",)
 
+
 @admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
-    list_display = ("pet", "owner", "sitter", "start_date", "end_date", "status")
+    list_display = (
+        "pet",
+        "owner",
+        "sitter",
+        "start_date",
+        "end_date",
+        "status")
     search_fields = ("pet__name", "owner__username", "sitter__username")
     list_filter = ("status", "start_date", "end_date")
 
