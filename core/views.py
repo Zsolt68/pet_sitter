@@ -213,13 +213,13 @@ def sitter_delete(request, pk):
 @login_required
 def availability_list(request):
     # Fetch all availability records from the database
-    availabilities = SitterAvailability.objects.all()
+    availability_list = SitterAvailability.objects.all()
 
     # Render the list template with the availability data
     return render(
         request,
         "availability/list.html",
-        {"availabilities": availabilities}
+        {"availability_list": availability_list}
     )
 
 # Create a new availability entry
