@@ -264,8 +264,9 @@ Stores information about a pet owned by a user.
 ### Booking
 Represents a booking between a pet owner and a sitter.
 
-### Review
-A review left by a user after a completed booking.
+### SitterProfile
+
+
 
 ### SitterAvailability
 Stores the available dates for each sitter.
