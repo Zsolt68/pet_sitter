@@ -1,4 +1,5 @@
 from django.contrib.auth.views import LogoutView
+from django.contrib.auth import views as auth_views
 from django.urls import path
 from . import views
 from .views import (
@@ -12,7 +13,13 @@ urlpatterns = [
     path('', views.home, name='home'),
     path("pets/", views.pets, name="pets"),
     path("bookings/", views.bookings, name="bookings"),
-    path("login/", views.login, name="login"),
+    path(
+        "login/",
+        auth_views.LoginView.as_view(
+            redirect_authenticated_user=True
+        ),
+        name="login",
+    ),
     path("logout/", LogoutView.as_view(), name="logout"),
     path("register/", views.register, name="register"),
     
@@ -35,7 +42,7 @@ urlpatterns = [
     path("sitters/<int:pk>/delete", views.sitter_delete, name="sitter_delete"),
 
     # URL routes for sitter availability CRUD: list, create, update and delete
-    path("availability/", availability_list, name="availability_list"),
+    path("availability/", views.availability_list, name="availability_list"),
     path("availability/create/", availability_create, name="availability_create"),
     path("availability/update/<int:pk>/", availability_update, name="availability_update"),
     path("availability/delete/<int:pk>/", availability_delete, name="availability_delete"),
