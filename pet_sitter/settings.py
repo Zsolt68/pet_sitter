@@ -26,7 +26,12 @@ SECRET_KEY = (
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['pet-sitter.herokuapp.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = [
+    'pet-sitter-1461e274cc14.herokuapp.com',
+    '127.0.0.1',
+    'localhost'
+
+]
 
 # Application definition
 INSTALLED_APPS = [
