@@ -107,7 +107,7 @@ A full‑stack Django application that lets users manage their pets and create s
 - [Features](#features)
 - [User Stories](#user-stories)
 - [Project Structure](#project-structure)
-- [Models](#models)
+- [Data Models](#data-models)
 - [Booking Validation](#booking-validation)
 - [Booking Process Flowchart](#booking-process-flowchart)
 - [Testing](#testing)
