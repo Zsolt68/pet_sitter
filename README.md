@@ -7,13 +7,6 @@ https://pet-sitter-1461e274cc14.herokuapp.com/
 https://github.com/yourusername/pet_sitter
 
 
- # Title
-# Badges
-
-## Table of Contents
-
-## Project Overview
-
 ## UX
 The UX design follows the five‑plane model: Strategy, Scope, Structure, Skeleton, and Surface.  
 The goal is to provide a clean, intuitive interface for managing pets and bookings with minimal friction.
@@ -67,7 +60,7 @@ The application follows a clear hierarchical structure:
 ---
 
 ### 🦴Skeleton
-ireframes were created to outline the layout of each page.
+Wireframes were created to outline the layout of each page.
 
 #### **Wireframes**
 
