@@ -97,7 +97,7 @@ The visual design uses:
 
 # Pet Sitter Booking System
 
-A full‑stack Django application that allows users to manage their pets and create sitter bookings with built‑in validation, authentication, and a clean Bootstrap UI.
+A full‑stack Django application that allows users to manage their pets and create sitters bookings with built‑in validation, authentication, and a clean Bootstrap UI.
 
 ---
 
