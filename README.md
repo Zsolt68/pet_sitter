@@ -6,13 +6,7 @@ https://pet-sitter-1461e274cc14.herokuapp.com/
 ## GitHub Repository
 https://github.com/yourusername/pet_sitter
 
-
- # Title
-# Badges
-
-## Table of Contents
-
-## Project Overview
+---
 
 ## UX
 The UX design follows the five‑plane model: Strategy, Scope, Structure, Skeleton, and Surface.  
@@ -100,32 +94,7 @@ The visual design uses:
 - Clear form labels and validation messages
 - Mobile‑first responsive design
 
-## Features
-
-## User Stories
-
-## Project Structure
-
-## Models
-
-## Booking Validation
-
-## Flowchart
-
-## Testing
-### Manual Testing
-### Validation Testing
-### Browser Testing
-### Code Validation
-
-## Lighthouse Report
-
-## Deployment
-
-## Future Enhancements
-
-## Credits & Acknowledgements
-
+---
 
 # Pet Sitter Booking System
 
