@@ -107,6 +107,7 @@ A full‑stack Django application that allows users to manage their pets and cre
 
 ## Table of Contents
 - [Project Overview](#project-overview)
+- [Resubmission Fixes](#resubmisssion-fixes)
 - [Features](#features)
 - [User Stories](#user-stories)
 - [Project Structure](#project-structure)
