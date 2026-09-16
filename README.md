@@ -142,9 +142,9 @@ This project was resubmitted on 16/09/2026 with the following corrections to mee
 
 ### Environment Variables
 
-- This project uses environment variables for sensitive configuration.
+This project uses environment variables for sensitive configuration.
 
-Local Development
+**Local Development**
 
 Create a .env file in the project root:
 SECRET_KEY=your-secret-key-here
@@ -154,13 +154,14 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-- Production (Heroku)
+**Production (Heroku)**
 
 Set the same variable in Heroku: SECRET_KEY
 
 This ensures secure, environment-based configuration.
 
-- Deployment (Heroku)
+**Deployment (Heroku)**
+
 The project is deployed on Heroku using:
 
 •	Gunicorn as the WSGI server
@@ -171,20 +172,21 @@ The project is deployed on Heroku using:
 
 •	Environment-based configuration
 
-Deployment Steps
+**Deployment Steps:**
 
 1.	Push to GitHub
 2.	Heroku auto-deploys from the main branch
 3.	Heroku loads environment variables
 4.	Gunicorn starts the Django application
 
-Live Deployment
+**Live Deployment**
 
 My deployed app is available at: https://pet-sitter-1461e274cc14.herokuapp.com/
 
 ### Testing after Resubmission Fixes
 
-Manual Testing
+**Manual Testing**
+
 All CRUD functionality was tested on both local and deployed versions:
 
 •	User authentication (login, logout, redirects)
@@ -203,7 +205,7 @@ All CRUD functionality was tested on both local and deployed versions:
 
 •	Deployment logs verified using Heroku logs --tail
 
-Deployment Verification
+**Deployment Verification**
 
 Heroku logs confirm:
 
