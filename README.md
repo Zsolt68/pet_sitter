@@ -150,6 +150,7 @@ Create a .env file in the project root:
 SECRET_KEY=your-secret-key-here
 
 The project loads environment variables using:
+
 from dotenv import load_dotenv
 
 load_dotenv()
