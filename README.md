@@ -93,32 +93,7 @@ The visual design uses:
 - Clear form labels and validation messages
 - Mobile‑first responsive design
 
-## Features
-
-## User Stories
-
-## Project Structure
-
-## Models
-
-## Booking Validation
-
-## Flowchart
-
-## Testing
-### Manual Testing
-### Validation Testing
-### Browser Testing
-### Code Validation
-
-## Lighthouse Report
-
-## Deployment
-
-## Future Enhancements
-
-## Credits & Acknowledgements
-
+---
 
 # Pet Sitter Booking System
 
@@ -269,7 +244,7 @@ Represents a booking between a pet owner and a sitter.
 
 
 ### SitterAvailability
-Stores the available dates for each sitter.
+Stores each sitter's available dates.
 
 These models form the foundation of the Pet Sitter platform and
 enable CRUD operations, user interactions, and booking workflows.
