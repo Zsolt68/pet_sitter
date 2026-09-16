@@ -156,12 +156,14 @@ This ensures secure, environment-based configuration.
 
 - Deployment (Heroku)
 The project is deployed on Heroku using:
+
 •	Gunicorn as the WSGI server
 •	Heroku Python buildpack
 •	Automatic static file collection
 •	Environment-based configuration
 
 Deployment Steps
+
 1.	Push to GitHub
 2.	Heroku auto-deploys from the main branch
 3.	Heroku loads environment variables
@@ -180,6 +182,7 @@ Heroku serves static files from:
 
 Manual Testing
 All CRUD functionality was tested on both local and deployed versions:
+
 •	User authentication (login, logout, redirects)
 •	Pet management (create, list, update, delete)
 •	Sitter management
@@ -191,6 +194,7 @@ All CRUD functionality was tested on both local and deployed versions:
 
 Deployment Verification
 Heroku logs confirm:
+
 •	Successful dyno startup
 •	Successful environment variable loading
 •	Successful login and CRUD navigation
