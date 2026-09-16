@@ -4,7 +4,7 @@
 https://pet-sitter-1461e274cc14.herokuapp.com/
 
 ## GitHub Repository
-https://github.com/yourusername/pet_sitter
+https://github.com/Zsolt68/pet_sitter
 
 
 ## UX
@@ -98,10 +98,6 @@ The visual design uses:
 # Pet Sitter Booking System
 
 A full‑stack Django application that allows users to manage their pets and create sitter bookings with built‑in validation, authentication, and a clean Bootstrap UI.
-
-![GitHub last commit](badge)
-![Heroku deployment](badge)
-![Python version](badge)
 
 ---
 
