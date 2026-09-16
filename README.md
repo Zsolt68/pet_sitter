@@ -109,11 +109,12 @@ A full‑stack Django application that allows users to manage their pets and cre
 - [Project Structure](#project-structure)
 - [Models](#models)
 - [Booking Validation](#booking-validation)
-- [Flowchart](#flowchart)
+- [Booking Process Flowchart](#booking-process-flowchart)
 - [Testing](#testing)
 - [Deployment](#deployment)
 - [Future Enhancements](#future-enhancements)
 - [Credits & Acknowledgements](#credits--acknowledgements)
+- [Code Authorship](#code-authorship)
 
 ---
 
