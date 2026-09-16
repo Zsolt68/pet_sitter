@@ -169,6 +169,7 @@ Deployment Steps
 5.	Static files are served via WhiteNoise (optional favicon not included)
 
 Live Deployment
+
 My deployed app is available at: https://pet-sitter-1461e274cc14.herokuapp.com/
 
 ### Testing after Resubmission Fixes
