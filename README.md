@@ -140,6 +140,60 @@ This project was resubmitted with the following corrections to meet Code Institu
 - Confirmed all CRUD functionality works on both local and deployed versions.
 - Updated README to reflect correct deployment steps and environment setup.
 
+### Environment Variables
+
+- This project uses environment variables for sensitive configuration.
+Local Development
+Create a .env file in the project root:
+SECRET_KEY=your-secret-key-here
+The project loads environment variables using:
+from dotenv import load_dotenv
+load_dotenv()
+
+- Production (Heroku)
+Set the same variable in Heroku: SECRET_KEY
+This ensures secure, environment-based configuration.
+
+- Deployment (Heroku)
+The project is deployed on Heroku using:
+•	Gunicorn as the WSGI server
+•	Heroku Python buildpack
+•	Automatic static file collection
+•	Environment-based configuration
+
+Deployment Steps
+1.	Push to GitHub
+2.	Heroku auto-deploys from the main branch
+3.	Heroku loads environment variables
+4.	Gunicorn starts the Django application
+5.	Static files are served via WhiteNoise (optional favicon not included)
+
+Live Deployment
+My deployed app is available at: https://pet-sitter-1461e274cc14.herokuapp.com/
+
+### Testing after Resubmission Fixes
+
+Static files are collected using:
+python manage.py collectstatic
+Heroku serves static files from:
+
+Manual Testing
+All CRUD functionality was tested on both local and deployed versions:
+•	User authentication (login, logout, redirects)
+•	Pet management (create, list, update, delete)
+•	Sitter management
+•	Booking management
+•	Navigation and access control
+•	Form validation
+•	Error handling
+•	Deployment logs verified using Heroku logs --tail
+
+Deployment Verification
+Heroku logs confirm:
+•	Successful dyno startup
+•	Successful environment variable loading
+•	Successful login and CRUD navigation
+•	No server errors
 
 ---
 
