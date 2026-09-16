@@ -129,7 +129,7 @@ This project provides a simple and intuitive platform for pet owners to manage t
 
 ## Resubmission Fixes
 
-This project was resubmitted for assessment on 16/09/2026 with the following corrections to meet Code Institute’s PP4 security and deployment requirements:
+This project was resubmitted for assessment on 16/09/2026 with the following corrections to meet Code Institute’s PP4 security and deployment requirements > LO5/5.2 & LO6/6.4 :
 
 - Moved SECRET_KEY into a .env file and removed the hardcoded key from settings.py.
 - Added python-dotenv and enabled environment variable loading.
