@@ -127,6 +127,22 @@ This project provides a simple and intuitive platform for pet owners to manage t
 
 ---
 
+## Resubmission Fixes
+
+This project was resubmitted with the following corrections to meet Code Institute’s PP4 security and deployment requirements:
+
+- Moved SECRET_KEY into a .env file and removed the hardcoded key from settings.py.
+- Added python-dotenv and enabled environment variable loading.
+- Added .env, db.sqlite3, and __pycache__/ to .gitignore.
+- Removed previously committed db.sqlite3 and __pycache__ from Git history.
+- Added SECRET_KEY to Heroku Config Vars.
+- Verified successful Heroku redeployment using secure environment variables.
+- Confirmed all CRUD functionality works on both local and deployed versions.
+- Updated README to reflect correct deployment steps and environment setup.
+
+
+---
+
 ## Project Structure
 
 The project follows a clean and modular Django structure, separating concerns across apps, templates, static files, and configuration.
