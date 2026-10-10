@@ -248,12 +248,26 @@ def sitter_update(request, pk):
 def sitter_delete(request, pk):
     sitter = get_object_or_404(User, pk=pk)
 
-    if request.method == "POST":
-        sitter.delete()
-        messages.success(request, "Sitter deleted successfully.")
+    if sitter != request.user:
+        messages.error(
+            request,
+            "You do not have permission to delete this account."
+        )
         return redirect("sitter_list")
 
-    return render(request, "sitters/delete.html", {"sitter": sitter})
+    if request.method == "POST":
+        sitter.delete()
+        messages.success(
+            request,
+            "Account deleted successfully."
+        )
+        return redirect("home")
+
+    return render(
+        request,
+        "sitters/delete.html",
+        {"sitter": sitter},
+    )
 
 
 @login_required
