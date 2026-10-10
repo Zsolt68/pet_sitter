@@ -61,15 +61,25 @@ class BookingForm(forms.ModelForm):
 
         return cleaned_data
 
-# Form for creating and updating pet sitter accounts
-# Uses Django's built-in User model to manage sitter details
-class SitterForm(forms.ModelForm):
+# Form for creating pet sitter accounts with password creation
+# and built-in Django user validation
+class SitterForm(UserCreationForm):
+    first_name = forms.CharField(required=False)
+    last_name = forms.CharField(required=False)
+    email = forms.EmailField(required=False)
+
     class Meta:
         model = User
 
-        # Fields displayed when creating or updating a sitter profile
-        fields = ["username", "first_name", "last_name", "email"]
-
+        # Fields displayed when creating a new sitter account
+        fields = [
+            "username",
+            "first_name",
+            "last_name",
+            "email",
+            "password1",
+            "password2",
+        ]
 
 # Form for creating and editing sitter availability records
 class SitterAvailabilityForm(forms.ModelForm):
@@ -81,18 +91,8 @@ class SitterAvailabilityForm(forms.ModelForm):
         fields = ["sitter", "date", "is_available"]
 
 
-# Form for creating pet sitter accounts with password creation
-# and built-in Django user validation
-class SitterForm(UserCreationForm):
+# Form for creating new user accounts with built-in Django validation
+class RegisterForm(UserCreationForm):
     class Meta:
         model = User
-
-        # Fields displayed when creating a new sitter account
-        fields = [
-            "username",
-            "first_name",
-            "last_name",
-            "email",
-            "password1",
-            "password2"
-            ]
+        fields = ["username", "password1", "password2"]
