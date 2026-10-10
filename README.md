@@ -579,15 +579,16 @@ This ensures that each pet can only be booked for one sitter at a time.
 | Overlap Validation | Overlapping booking rejected | ✔ Passed |
 | Date Validation | End date must be after start | ✔ Passed |
 
-#### **Acount Deletion**
+#### **Account Deletion**
+
 | Feature | Action | Expected Result | Actual Result |
 |----------|----------|----------|----------|
-| Account Deletion | Logged-in user attempts to delete another user's account | Access denied and user receives an authorisation error message | Pass |
-| Account Deletion | Logged-in user deletes their own account | Account is successfully deleted and user is redirected appropriately | Pass |
+| Account Deletion | Logged-in user attempts to delete another user's account | Access denied and user receives an authorisation error message | ✔ Pass |
+| Account Deletion | Administrator attempts to delete a pet sitter account | Sitter account is successfully deleted and administrator is redirected appropriately | ✔ Pass |
 
 **Fix Applied:**
 
-Updated the "sitter_delete" view to ensure users can only delete their own account. Any attempt to delete another user's account results in an authorisation error message and redirection to the sitter list page.
+Updated the "sitter_delete" view to enforce authorisation checks. Regular authenticated users cannot delete user accounts and receive an authorisation error message if they attempt to do so. Only administrators (superusers) are permitted to delete pet sitter accounts through the application.
 
 ---
 
