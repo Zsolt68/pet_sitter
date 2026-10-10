@@ -579,6 +579,21 @@ This ensures that each pet can only be booked for one sitter at a time.
 | Overlap Validation | Overlapping booking rejected | ✔ Passed |
 | Date Validation | End date must be after start | ✔ Passed |
 
+#### **Acount Deletion**
+| Feature | Action | Test Result |  
+|--------|-----------------|-------------|
+| Add Booking | Booking created and visible | ✔ Passed |
+| Edit Booking | Changes saved | ✔ Passed |
+| Delete Booking | Booking removed | ✔ Passed |
+| Overlap Validation | Overlapping booking rejected | ✔ Passed |
+| Date Validation | End date must be after start | ✔ Passed |
+
+#### **Acount Deletion**
+| Feature | Action | Expected Result | Actual Result |
+|----------|----------|----------|----------|
+| Account Deletion | Logged-in user attempts to delete another user's account | Access denied and user receives an authorisation error message | Pass |
+| Account Deletion | Logged-in user deletes their own account | Account is successfully deleted and user is redirected appropriately | Pass |
+
 ---
 
 ### ✔ Validation Testing
