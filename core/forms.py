@@ -1,3 +1,4 @@
+from datetime import date
 from django import forms
 from .models import Pet
 from django.core.exceptions import ValidationError
@@ -39,6 +40,12 @@ class BookingForm(forms.ModelForm):
         pet = cleaned_data.get("pet")
         start = cleaned_data.get("start_date")
         end = cleaned_data.get("end_date")
+
+# Validate booking start date is not in the past
+        if start and start < date.today():
+        raise ValidationError(
+            "Bookings cannot be created for dates in the past."
+        )
 
         # 1) Validate end_date > start_date
         if start and end and end <= start:
