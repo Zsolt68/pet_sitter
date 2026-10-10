@@ -248,10 +248,10 @@ def sitter_update(request, pk):
 def sitter_delete(request, pk):
     sitter = get_object_or_404(User, pk=pk)
 
-    if sitter != request.user:
+    if not request.user.is_superuser:
         messages.error(
             request,
-            "You do not have permission to delete this account."
+            "You do not have permission to delete users."
         )
         return redirect("sitter_list")
 
@@ -259,9 +259,9 @@ def sitter_delete(request, pk):
         sitter.delete()
         messages.success(
             request,
-            "Account deleted successfully."
+            "Sitter deleted successfully."
         )
-        return redirect("home")
+        return redirect("sitter_list")
 
     return render(
         request,
