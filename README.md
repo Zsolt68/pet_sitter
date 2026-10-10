@@ -562,6 +562,24 @@ This ensures that each pet can only be booked for one sitter at a time.
 
 ### ✔ Manual Testing
 
+#### **Sitter Account Creation**
+
+| Feature | Action | Expected Result | Actual Result |
+|----------|----------|----------|----------|
+| Create Sitter | Admin creates a new sitter account with valid credentials | Sitter account is created successfully and can log in using the chosen password | ✔ Pass |
+| Create Sitter | Password confirmation does not match | Validation error is displayed and account is not created | ✔ Pass |
+
+#### **Account Deletion**
+
+| Feature | Action | Expected Result | Actual Result |
+|----------|----------|----------|----------|
+| Account Deletion | Logged-in user attempts to delete another user's account | Access denied and user receives an authorisation error message | ✔ Pass |
+| Account Deletion | Administrator attempts to delete a pet sitter account | Sitter account is successfully deleted and administrator is redirected appropriately | ✔ Pass |
+
+**Fix Applied:**
+
+Updated the "sitter_delete" view to enforce authorisation checks. Regular authenticated users cannot delete user accounts and receive an authorisation error message if they attempt to do so. Only administrators (superusers) are permitted to delete pet sitter accounts through the application.
+
 #### **Pets**
 | Feature | Expected Result | Test Result |
 |--------|-----------------|-------------|
@@ -578,17 +596,6 @@ This ensures that each pet can only be booked for one sitter at a time.
 | Delete Booking | Booking removed | ✔ Passed |
 | Overlap Validation | Overlapping booking rejected | ✔ Passed |
 | Date Validation | End date must be after start | ✔ Passed |
-
-#### **Account Deletion**
-
-| Feature | Action | Expected Result | Actual Result |
-|----------|----------|----------|----------|
-| Account Deletion | Logged-in user attempts to delete another user's account | Access denied and user receives an authorisation error message | ✔ Pass |
-| Account Deletion | Administrator attempts to delete a pet sitter account | Sitter account is successfully deleted and administrator is redirected appropriately | ✔ Pass |
-
-**Fix Applied:**
-
-Updated the "sitter_delete" view to enforce authorisation checks. Regular authenticated users cannot delete user accounts and receive an authorisation error message if they attempt to do so. Only administrators (superusers) are permitted to delete pet sitter accounts through the application.
 
 ---
 
