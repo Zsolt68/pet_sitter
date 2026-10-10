@@ -4,15 +4,8 @@
 https://pet-sitter-1461e274cc14.herokuapp.com/
 
 ## GitHub Repository
-https://github.com/yourusername/pet_sitter
+https://github.com/Zsolt68/pet_sitter
 
-
- # Title
-# Badges
-
-## Table of Contents
-
-## Project Overview
 
 ## UX
 The UX design follows the five‑plane model: Strategy, Scope, Structure, Skeleton, and Surface.  
@@ -67,7 +60,7 @@ The application follows a clear hierarchical structure:
 ---
 
 ### 🦴Skeleton
-ireframes were created to outline the layout of each page.
+Wireframes were created to outline the layout of each page.
 
 #### **Wireframes**
 
@@ -100,61 +93,127 @@ The visual design uses:
 - Clear form labels and validation messages
 - Mobile‑first responsive design
 
-## Features
-
-## User Stories
-
-## Project Structure
-
-## Models
-
-## Booking Validation
-
-## Flowchart
-
-## Testing
-### Manual Testing
-### Validation Testing
-### Browser Testing
-### Code Validation
-
-## Lighthouse Report
-
-## Deployment
-
-## Future Enhancements
-
-## Credits & Acknowledgements
-
+---
 
 # Pet Sitter Booking System
 
-A full‑stack Django application that allows users to manage their pets and create sitter bookings with built‑in validation, authentication, and a clean Bootstrap UI.
-
-![GitHub last commit](badge)
-![Heroku deployment](badge)
-![Python version](badge)
+A full‑stack Django application that lets users manage their pets and create sitter bookings, with built‑in validation, authentication, and a clean Bootstrap UI.
 
 ---
 
 ## Table of Contents
 - [Project Overview](#project-overview)
+- [Resubmission Fixes](#resubmission-fixes)
 - [Features](#features)
 - [User Stories](#user-stories)
 - [Project Structure](#project-structure)
-- [Models](#models)
+- [Data Models](#data-models)
 - [Booking Validation](#booking-validation)
-- [Flowchart](#flowchart)
+- [Booking Process Flowchart](#booking-process-flowchart)
 - [Testing](#testing)
 - [Deployment](#deployment)
 - [Future Enhancements](#future-enhancements)
 - [Credits & Acknowledgements](#credits--acknowledgements)
+- [Code Authorship](#code-authorship)
 
 ---
 
 ## Project Overview
 
 This project provides a simple and intuitive platform for pet owners to manage their pets and create sitter bookings. It includes full CRUD functionality for Pets and Bookings, user authentication, and custom validation to prevent overlapping bookings.
+
+---
+
+## Resubmission Fixes
+
+This project was resubmitted for assessment on 17/09/2026 with the following corrections to meet Code Institute’s PP4 security and deployment requirements > LO5/5.2 & LO6/6.4 :
+
+- Moved SECRET_KEY into a .env file and removed the hardcoded key from settings.py.
+- Added python-dotenv and enabled environment variable loading.
+- Added .env, db.sqlite3, and __pycache__/ to .gitignore.
+- Removed previously committed db.sqlite3 and __pycache__ from Git history.
+- Added SECRET_KEY to Heroku Config Vars.
+- Verified successful Heroku redeployment using secure environment variables.
+- Confirmed all CRUD functionality works on both local and deployed versions.
+- Updated README to reflect correct deployment steps and environment setup.
+
+### Environment Variables
+
+This project uses environment variables for sensitive configuration.
+
+**Local Development**
+
+Create a .env file in the project root:
+SECRET_KEY=your-secret-key-here
+
+The project loads environment variables using:
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
+**Production (Heroku)**
+
+Set the same variable in Heroku: SECRET_KEY
+
+This ensures secure, environment-based configuration.
+
+**Deployment (Heroku)**
+
+The project is deployed on Heroku using:
+
+•	Gunicorn as the WSGI server
+
+•	Heroku Python buildpack
+
+•	Automatic static file collection
+
+•	Environment-based configuration
+
+**Deployment Steps:**
+
+1.	Push to GitHub
+2.	Heroku auto-deploys from the main branch
+3.	Heroku loads environment variables
+4.	Gunicorn starts the Django application
+
+**Live Deployment**
+
+My deployed app is available at: https://pet-sitter-1461e274cc14.herokuapp.com/
+
+### Testing after Resubmission Fixes
+
+**Manual Testing**
+
+All CRUD functionality was tested on both local and deployed versions:
+
+•	User authentication (login, logout, redirects)
+
+•	Pet management (create, list, update, delete)
+
+•	Sitter management
+
+•	Booking management
+
+•	Navigation and access control
+
+•	Form validation
+
+•	Error handling
+
+•	Deployment logs verified using Heroku logs --tail
+
+**Deployment Verification**
+
+Heroku logs confirm:
+
+•	Successful dyno startup
+
+•	Successful environment variable loading
+
+•	Successful login and CRUD navigation
+
+•	No server errors
 
 ---
 
@@ -276,7 +335,7 @@ Represents a booking between a pet owner and a sitter.
 
 
 ### SitterAvailability
-Stores the available dates for each sitter.
+Stores each sitter's available dates.
 
 These models form the foundation of the Pet Sitter platform and
 enable CRUD operations, user interactions, and booking workflows.
