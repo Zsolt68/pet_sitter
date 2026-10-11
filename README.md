@@ -597,6 +597,15 @@ Updated the "sitter_delete" view to enforce authorisation checks. Regular authen
 | Overlap Validation | Overlapping booking rejected | ✔ Passed |
 | Date Validation | End date must be after start | ✔ Passed |
 
+#### **Booking Date Validation**
+
+| Feature | Action | Expected Result | Actual Result |
+|----------|----------|----------|----------|
+| Booking Creation | User enters a start date in the past | Validation error displayed and booking not created | ✔ Pass |
+| Booking Creation | User enters a future start date | Booking is created successfully | ✔ Pass |
+| Booking Creation | End date is before start date | Validation error displayed | ✔ Pass |
+| Booking Creation | Booking overlaps an existing booking | Validation error displayed | ✔ Pass |
+
 ---
 
 ### ✔ Validation Testing
