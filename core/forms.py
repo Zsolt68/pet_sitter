@@ -43,7 +43,7 @@ class BookingForm(forms.ModelForm):
 
 # Validate booking start date is not in the past
         if start and start < date.today():
-        raise ValidationError(
+           raise ValidationError(
             "Bookings cannot be created for dates in the past."
         )
 
