@@ -24,6 +24,46 @@ A screenshot of the GitHub Project Board is provided below:
 
 Insert GitHub Project Board Screenshot here
 
+## MoSCoW Prioritisation
+
+The following prioritisation method was used throughout the project:
+
+### Must Have
+
+Essential functionality required for the successful operation of the application.
+
+- User Registration
+- User Login and Logout
+- Pet Management (CRUD)
+- Booking Management (CRUD)
+- Sitter Management
+- Role-Based Access Control
+- Form Validation
+
+### Should Have
+
+Important functionality that enhances usability and user experience.
+
+- Availability Management
+- User Feedback Messages
+- Booking Status Tracking
+
+### Could Have
+
+Additional features that could improve the application if time permitted.
+
+- Advanced Search Functionality
+- User Profile Images
+- Email Notifications
+
+### Won't Have (Future Development)
+
+Features identified for future releases but outside the scope of the current project.
+
+- Online Payments
+- Real-Time Messaging
+- Calendar Synchronisation
+
 
 ---
 
