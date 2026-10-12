@@ -1,4 +1,4 @@
-﻿# pet_sitter
+﻿# Pet Sitter
 
 ## Live Site
 https://pet-sitter-1461e274cc14.herokuapp.com/
@@ -7,9 +7,23 @@ https://pet-sitter-1461e274cc14.herokuapp.com/
 https://github.com/Zsolt68/pet_sitter
 
 
-## UX
+## UX Design
 The UX design follows the five‑plane model: Strategy, Scope, Structure, Skeleton, and Surface.  
 The goal is to provide a clean, intuitive interface for managing pets and bookings with minimal friction.
+
+## Agile Methodology
+The Pet Sitter project was developed using Agile principles throughout the software development lifecycle. Features were planned and managed using a GitHub Project Board, allowing tasks to be organised and tracked from initial concept through to completion.
+
+User Stories were grouped into Epics and prioritised using the MoSCoW prioritisation framework to ensure that the most important features were delivered first. The project board consisted of the following workflow stages:
+
+To Do – planned tasks awaiting development
+In Progress – features currently being developed and tested
+Done – completed and tested functionality
+
+A screenshot of the GitHub Project Board is provided below:
+
+Insert GitHub Project Board Screenshot here
+
 
 ---
 
