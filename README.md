@@ -16,9 +16,9 @@ The Pet Sitter project was developed using Agile principles throughout the softw
 
 User Stories were grouped into Epics and prioritised using the MoSCoW prioritisation framework to ensure that the most important features were delivered first. The project board consisted of the following workflow stages:
 
-To Do – planned tasks awaiting development
-In Progress – features currently being developed and tested
-Done – completed and tested functionality
+- To Do – planned tasks awaiting development
+- In Progress – features currently being developed and tested
+- Done – completed and tested functionality
 
 A screenshot of the GitHub Project Board is provided below:
 
