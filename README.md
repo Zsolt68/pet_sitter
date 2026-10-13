@@ -1,4 +1,4 @@
-﻿# pet_sitter
+﻿# Pet Sitter
 
 ## Live Site
 https://pet-sitter-1461e274cc14.herokuapp.com/
@@ -7,11 +7,160 @@ https://pet-sitter-1461e274cc14.herokuapp.com/
 https://github.com/Zsolt68/pet_sitter
 
 
-## UX
+## UX Design
 The UX design follows the five‑plane model: Strategy, Scope, Structure, Skeleton, and Surface.  
 The goal is to provide a clean, intuitive interface for managing pets and bookings with minimal friction.
 
+## Agile Methodology
+
+### Agile Development
+
+The Pet Sitter project was developed using Agile principles throughout the software development lifecycle. Features were planned and managed using a GitHub Project Board, allowing tasks to be organised and tracked from initial concept through to completion.
+
+User Stories were grouped into Epics and prioritised using the MoSCoW prioritisation framework to ensure that the most important features were delivered first. 
+
+### GitHub Project Board
+
+The project was managed using GitHub Issues and GitHub Projects.
+
+Issues were organised into Epics and User Stories and tracked through the following workflow:
+
+- Backlog – planned tasks awaiting development
+- To Do – planned tasks awaiting development
+- In Progress – features currently being developed and tested
+- Done - completed and tested functionality
+
+The board was updated throughout development to monitor progress and prioritise tasks.
+
+![GitHub Project Board](docs/images/pet_sitter Agile Board.png)
+
+### MoSCoW Prioritisation
+
+The following prioritisation method was used throughout the project:
+
+### Must Have
+
+Essential functionality required for the successful operation of the application.
+
+- User Registration
+- User Login and Logout
+- Pet Management (CRUD)
+- Booking Management (CRUD)
+- Sitter Management
+- Role-Based Access Control
+- Form Validation
+
+### Should Have
+
+Important functionality that enhances usability and user experience.
+
+- Availability Management
+- User Feedback Messages
+- Booking Status Tracking
+
+### Could Have
+
+Additional features that could improve the application if time permitted.
+
+- Advanced Search Functionality
+- User Profile Images
+- Email Notifications
+
+### Won't Have (Future Development)
+
+Features identified for future releases but outside the scope of the current project.
+
+- Online Payments
+- Real-Time Messaging
+- Calendar Synchronisation
+
 ---
+
+## GitHub Project Management
+
+The team planned and managed the project using GitHub Issues and GitHub Projects.
+
+Each major feature was organised into an Epic and broken down into individual User Stories.
+
+### Epics
+
+- Epic 1 – User Authentication & Permissions
+- Epic 2 – Pet Management
+- Epic 3 – Sitter Management
+- Epic 4 – Availability Management
+- Epic 5 – Booking System
+- Epic 6 – UX, Templates & Navigation
+- Epic 7 – Deployment & Testing
+- Epic 8 – Documentation (README & TESTING.md)
+
+## Epics and User Stories
+
+### Epic 1 – User Authentication & Permissions
+
+#### US1: User Registration
+
+**Priority:** Must Have
+
+As a user,
+I can register an account,
+so I can access the site.
+
+##### Acceptance Criteria
+
+- User can access the registration page.
+- User can create an account successfully.
+- Invalid data displays validation messages.
+- Registered users can log in.
+
+---
+
+#### US2: User Login
+
+**Priority:** Must Have
+
+As a user,
+I can log in,
+so I can access protected features.
+
+##### Acceptance Criteria
+
+- User can enter valid credentials.
+- Invalid credentials display an error message.
+- User is redirected after successful login.
+
+---
+
+#### US3: User Logout
+
+**Priority:** Must Have
+
+As a user,
+I can log out,
+so I can securely end my session.
+
+##### Acceptance Criteria
+
+- User can access a logout option.
+- Session is terminated successfully.
+- User is redirected appropriately.
+
+---
+
+#### US4: Protected Route Access
+
+**Priority:** Must Have
+
+As a user,
+I am redirected to the login page when I try to access protected pages.
+
+##### Acceptance Criteria
+
+- Anonymous users cannot access protected routes.
+- Login page is displayed when authentication is required.
+- Authenticated users can access authorised pages.
+
+---
+
 
 ### Strategy
 
