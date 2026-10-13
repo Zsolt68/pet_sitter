@@ -12,17 +12,27 @@ The UX design follows the five‑plane model: Strategy, Scope, Structure, Skelet
 The goal is to provide a clean, intuitive interface for managing pets and bookings with minimal friction.
 
 ## Agile Methodology
+
+### Agile Development
+
 The Pet Sitter project was developed using Agile principles throughout the software development lifecycle. Features were planned and managed using a GitHub Project Board, allowing tasks to be organised and tracked from initial concept through to completion.
 
-User Stories were grouped into Epics and prioritised using the MoSCoW prioritisation framework to ensure that the most important features were delivered first. The project board consisted of the following workflow stages:
+User Stories were grouped into Epics and prioritised using the MoSCoW prioritisation framework to ensure that the most important features were delivered first. 
 
+### GitHub Project Board
+
+The project was managed using GitHub Issues and GitHub Projects.
+
+Issues were organised into Epics and User Stories and tracked through the following workflow:
+
+- Backlog – planned tasks awaiting development
 - To Do – planned tasks awaiting development
 - In Progress – features currently being developed and tested
-- Done – completed and tested functionality
+- Done - completed and tested functionality
 
-A screenshot of the GitHub Project Board is provided below:
+The board was updated throughout development to monitor progress and prioritise tasks.
 
-Insert GitHub Project Board Screenshot here
+![GitHub Project Board](docs/images/pet_sitter Agile Board.png)
 
 ### MoSCoW Prioritisation
 
