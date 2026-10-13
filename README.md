@@ -68,7 +68,7 @@ Features identified for future releases but outside the scope of the current pro
 
 ## GitHub Project Management
 
-The project was planned and managed using GitHub Issues and GitHub Projects.
+The team planned and managed the project using GitHub Issues and GitHub Projects.
 
 Each major feature was organised into an Epic and broken down into individual User Stories.
 
