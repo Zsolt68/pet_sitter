@@ -32,7 +32,7 @@ Issues were organised into Epics and User Stories and tracked through the follow
 
 The board was updated throughout development to monitor progress and prioritise tasks.
 
-![GitHub Project Board](docs/images/pet_sitter Agile Board.png)
+![GitHub Project Board](docs/images/project-board.png)
 
 ### MoSCoW Prioritisation
 
