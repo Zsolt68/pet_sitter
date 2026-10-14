@@ -452,8 +452,9 @@ project-root/
 - Access control (only owners can manage their pets and bookings)
 
 ### ✔ Booking Validation
+- Bookings cannot be created with start dates in the past.
 - Prevent overlapping bookings for the same pet
-- Ensure end date is after start date
+- End dates must occur after start dates
 - Clean error messages displayed in the form
 
 ### 🎨 Responsive UI
@@ -473,21 +474,26 @@ project-root/
 
 The project uses four core models:
 
+### User
+Handles authentication and user management.
+
 ### Pet
 Stores information about a pet owned by a user.
 
 ### Booking
 Represents a booking between a pet owner and a sitter.
 
-### SitterProfile
-
-
-
 ### SitterAvailability
 Stores each sitter's available dates.
 
 These models form the foundation of the Pet Sitter platform and
 enable CRUD operations, user interactions, and booking workflows.
+
+## Entity Relationship Diagram (ERD)
+
+The following ERD illustrates the relationships between the User, Pet, Booking and SitterAvailability models used within the application.
+
+![Entity Relationship Diagram](docs/images/erd.png)
 
 
 ## Application Architecture — Pets & Bookings
