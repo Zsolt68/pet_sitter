@@ -820,8 +820,9 @@ No compilation errors were reported.
 ## Django System Check
 
 The Django system check was run before deployment:
-
-Run: ```bash python manage.py check
+ 
+```bash
+python manage.py check
 ```
 Result:
 System check identified no issues (0 silenced).
