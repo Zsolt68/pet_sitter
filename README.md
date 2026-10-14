@@ -493,7 +493,7 @@ enable CRUD operations, user interactions, and booking workflows.
 
 The following ERD illustrates the relationships between the User, Pet, Booking and SitterAvailability models used within the application.
 
-![Entity Relationship Diagram](docs/images/erd_1.png)
+![Entity Relationship Diagram](docs/images/erd1.png)
 
 
 ## Application Architecture — Pets & Bookings
