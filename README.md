@@ -813,7 +813,7 @@ All Python files compiled successfully.
 No syntax errors were detected.
 No compilation errors were reported.
 
-![Python Validation](docs/images/validation/python-compileall.png)
+![Python Validation](docs/validation/python-compileall.png)
 
 ---
 
@@ -827,7 +827,7 @@ python manage.py check
 Result:
 System check identified no issues (0 silenced).
 
-![Python Validation](docs/images/validation/python manage.py check.png)
+![Python Validation](docs/validation/python-manage.py check.png)
 
 ---
 
