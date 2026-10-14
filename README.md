@@ -806,7 +806,7 @@ The project was validated using Python's built-in compilation check:
 
 ```bash  
 python -m compileall .
-
+```
 Result:
 
 All Python files compiled successfully.
@@ -822,6 +822,7 @@ No compilation errors were reported.
 The Django system check was run before deployment:
 
 Run: ```bash python manage.py check
+```
 Result:
 System check identified no issues (0 silenced).
 
