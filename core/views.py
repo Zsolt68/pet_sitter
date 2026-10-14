@@ -216,20 +216,45 @@ def sitter_list(request):
 
 @login_required
 def sitter_create(request):
+
+    if not request.user.is_superuser:
+        messages.error(
+            request,
+            "You do not have permission to create sitters."
+        )
+        return redirect("sitter_list")
+
     if request.method == "POST":
         form = SitterForm(request.POST)
+
         if form.is_valid():
             form.save()
-            messages.success(request, "Sitter added successfully.")
+            messages.success(
+                request,
+                "Sitter added successfully."
+            )
             return redirect("sitter_list")
+
     else:
         form = SitterForm()
 
-    return render(request, "sitters/form.html", {"form": form})
+    return render(
+        request,
+        "sitters/form.html",
+        {"form": form},
+    )
 
 
 @login_required
 def sitter_update(request, pk):
+
+    if not request.user.is_superuser:
+        messages.error(
+            request,
+            "You do not have permission to edit sitters."
+        )
+        return redirect("sitter_list")
+    
     sitter = get_object_or_404(User, pk=pk)
 
     if request.method == "POST":
