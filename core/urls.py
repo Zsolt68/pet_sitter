@@ -28,12 +28,9 @@ urlpatterns = [
 
     path(
         "login/",
-        auth_views.LoginView.as_view(
-            template_name="login.html",
-            redirect_authenticated_user=True,
-        ),
+        views.login,
         name="login",
-    ),
+        ),
 
     path("logout/", LogoutView.as_view(), name="logout"),
     path("register/", views.register, name="register"),
