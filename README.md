@@ -798,7 +798,34 @@ New: 16–20 Jun
 - Python code validated with no syntax errors  
 - Django templates render without issues  
 - Forms validated correctly  
-- URLs resolve correctly  
+- URLs resolve correctly
+
+### Python Compilation Validation
+
+The project was validated using Python's built-in compilation check:
+
+```bash  
+python -m compileall .
+
+Result:
+
+All Python files compiled successfully.
+No syntax errors were detected.
+No compilation errors were reported.
+
+![Python Validation](docs/images/validation/python-compileall.png)
+
+---
+
+## Django System Check
+
+The Django system check was run before deployment:
+
+Run: ```bash python manage.py check
+Result:
+System check identified no issues (0 silenced).
+
+![Python Validation](docs/images/validation/python manage.py check.png)
 
 ---
 
@@ -809,18 +836,11 @@ Tested on:
 - Edge  
 - Mobile Android
 
-All pages responsive and functional.
-
-
-## Code Validation
-- No Python syntax errors  
-- Templates render correctly  
-- Forms validate correctly  
-- URLs resolve correctly  
+All pages are responsive and functional.
 
 ## Lighthouse Report
 
-Lighthouse audits were run on the deployed site to ensure performance, accessibility, best practices, and SEO.
+We ran Lighthouse audits on the deployed site to ensure performance, accessibility, best practices, and SEO.
 
 ### Desktop Results
 
