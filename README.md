@@ -827,7 +827,7 @@ python manage.py check
 Result:
 System check identified no issues (0 silenced).
 
-![Python Validation](docs/validation/python-manage.py check.png)
+![Python Validation](docs/validation/python-manage.png)
 
 ---
 
