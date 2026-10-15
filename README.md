@@ -735,6 +735,11 @@ This ensures that each pet can only be booked for one sitter at a time.
 
 Updated the "sitter_delete" view to enforce authorisation checks. Regular authenticated users cannot delete user accounts and receive an authorisation error message if they attempt to do so. Only administrators (superusers) can delete pet sitter accounts through the application.
 
+![Sitter Permisssion Denied](docs/images/testing/sitter-permission-denied1.png)
+![Sitter Permisssion Denied](docs/images/testing/sitter-permission-denied2.png)
+![Sitter Permisssion Denied](docs/images/testing/sitter-permission-denied3.png)
+![Sitter Permisssion Denied](docs/images/testing/sitter-permission-denied4.png)
+
 #### **Sitter Management Authorisation**
 
 | Feature | Action | Expected Result | Actual Result |
@@ -746,6 +751,10 @@ Updated the "sitter_delete" view to enforce authorisation checks. Regular authen
 **Security Fix Applied:**
 
 Restricted Sitter Management functionality to superusers only. Regular authenticated users cannot create, edit, or delete Sitter accounts and receive an authorisation error message if they attempt to access these functions.
+
+![Sitter Permisssion Denied](docs/images/testing/sitter-permission-denied5.png)
+![Sitter Permisssion Denied](docs/images/testing/sitter-permission-denied6.png)
+
 
 #### **Pets**
 | Feature | Expected Result | Test Result |
@@ -777,15 +786,31 @@ Restricted Sitter Management functionality to superusers only. Regular authentic
 
 ### ✔ Validation Testing
 
-#### **End Date Validation**
-- Start: 10 Jun  
-- End: 9 Jun  
+#### **Booking End Date Validation**
+- Start: 16 Oct  
+- End: 15 Oct  
 → ❌ Rejected
 
-#### **Overlap Validation**
+#### End Date Validation Evidence
+
+The system prevents users from creating bookings where the end date occurs before the start date.
+
+![Booking End Date Validation](docs/images//validation/end-date-validation1.png)
+
+![Booking End Date Validation](docs/images//validation/end-date-validation2.png)
+
+![Booking End Date Validation](docs/images//validation/end-date-validation3.png)
+
+#### **Booking Overlap Validation**
 Existing: 10–15 Jun  
 New: 14–20 Jun  
 → ❌ Rejected
+
+![Booking Overlap Validation](docs/images//validation/booking-overlap-validation1.png)
+
+![Booking Overlap Validation](docs/images//validation/booking-overlap-validation2.png)
+
+![Booking Overlap Validation](docs/images//validation/booking-overlap-validation3.png)
 
 #### **Non‑Overlap**
 Existing: 10–15 Jun  
@@ -813,7 +838,7 @@ All Python files compiled successfully.
 No syntax errors were detected.
 No compilation errors were reported.
 
-![Python Validation](docs/validation/python-compileall.png)
+![Python Validation](docs/images/validation/python-compileall.png)
 
 ---
 
@@ -827,7 +852,7 @@ python manage.py check
 Result:
 System check identified no issues (0 silenced).
 
-![Python Validation](docs/validation/python-manage.png)
+![Python Validation](docs/images/validation/python-manage.png)
 
 ---
 
