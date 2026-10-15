@@ -777,7 +777,6 @@ Restricted Sitter Management functionality to superusers only. Regular authentic
 
 ![Pets Deletion](docs/images/testing/pet-delete1.png)
 ![Pets Deletion](docs/images/testing/pet-delete2.png)
-![Pets Deletion](docs/images/testing/pet-delete3.png)
 
 #### **Bookings**
 | Feature | Expected Result | Test Result |
