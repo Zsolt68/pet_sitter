@@ -777,15 +777,27 @@ Restricted Sitter Management functionality to superusers only. Regular authentic
 
 ### ✔ Validation Testing
 
-#### **End Date Validation**
-- Start: 10 Jun  
-- End: 9 Jun  
+#### **Booking End Date Validation**
+- Start: 16 Oct  
+- End: 15 Oct  
 → ❌ Rejected
 
-#### **Overlap Validation**
+#### End Date Validation Evidence
+
+The system prevents users from creating bookings where the end date occurs before the start date.
+
+![Booking End Date Validation](docs/validation/end-date-validation1.png)
+![Booking End Date Validation](docs/validation/end-date-validation2.png)
+![Booking End Date Validation](docs/validation/end-date-validation3.png)
+
+#### **Booking Overlap Validation**
 Existing: 10–15 Jun  
 New: 14–20 Jun  
 → ❌ Rejected
+
+![Booking Overlap Validation](docs/validation/booking-overlap-validation1.png)
+![Booking Overlap Validation](docs/validation/booking-overlap-validation2.png)
+![Booking Overlap Validation](docs/validation/booking-overlap-validation3.png)
 
 #### **Non‑Overlap**
 Existing: 10–15 Jun  
