@@ -724,6 +724,11 @@ This ensures that each pet can only be booked for one sitter at a time.
 | Create Sitter | Admin creates a new sitter account with valid credentials | Sitter account is created successfully and can log in using the chosen password | ✔ Pass |
 | Create Sitter | Password confirmation does not match | Validation error is displayed and account is not created | ✔ Pass |
 
+![Sitter Account Creation](docs/images/testing/register-success.png)
+![Sitter Account Creation](docs/images/testing/regular-user-login.png)
+[Sitter Account Creation](docs/images/testing/login-success.png)
+![Sitter Account Creation](docs/images/testing/home-page-manage-sitters.png)
+
 #### **Account Deletion**
 
 | Feature | Action | Expected Result | Actual Result |
@@ -764,6 +769,16 @@ Restricted Sitter Management functionality to superusers only. Regular authentic
 | Delete Pet | Pet removed after confirmation | ✔ Passed |
 | Access Control | Users cannot access others’ pets | ✔ Passed |
 
+![Pets Creation](docs/images/testing/pet-create1.png)
+![Pets Creation](docs/images/testing/pet-create2.png)
+![Pets Creation](docs/images/testing/pet-create3.png)
+
+![Pets Edit](docs/images/testing/pet-edit.png)
+
+![Pets Deletion](docs/images/testing/pet-delete1.png)
+![Pets Deletion](docs/images/testing/pet-delete2.png)
+![Pets Deletion](docs/images/testing/pet-delete3.png)
+
 #### **Bookings**
 | Feature | Expected Result | Test Result |
 |--------|-----------------|-------------|
@@ -772,6 +787,19 @@ Restricted Sitter Management functionality to superusers only. Regular authentic
 | Delete Booking | Booking removed | ✔ Passed |
 | Overlap Validation | Overlapping booking rejected | ✔ Passed |
 | Date Validation | End date must be after start | ✔ Passed |
+
+![Bookings Creation](docs/images/testing/booking-create1.png)
+![Bookings Creation](docs/images/testing/booking-create2.png)
+![Bookings Creation](docs/images/testing/booking-create3.png)
+
+![Bookings Edit](docs/images/testing/booking-edit1.png)
+![Bookings Edit](docs/images/testing/booking-edit2.png)
+![Bookings Edit](docs/images/testing/booking-edit3.png)
+
+![Bookings Delete](docs/images/testing/booking-delete1.png)
+![Bookings Delete](docs/images/testing/booking-delete2.png)
+![Bookings Delete](docs/images/testing/booking-delete3.png)
+
 
 #### **Booking Date Validation**
 
