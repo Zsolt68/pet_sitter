@@ -735,6 +735,11 @@ This ensures that each pet can only be booked for one sitter at a time.
 
 Updated the "sitter_delete" view to enforce authorisation checks. Regular authenticated users cannot delete user accounts and receive an authorisation error message if they attempt to do so. Only administrators (superusers) can delete pet sitter accounts through the application.
 
+![Sitter Permisssion Denied](docs/images/testing/sitter-permission-denied1.png)
+![Sitter Permisssion Denied](docs/images/testing/sitter-permission-denied2.png)
+![Sitter Permisssion Denied](docs/images/testing/sitter-permission-denied3.png)
+![Sitter Permisssion Denied](docs/images/testing/sitter-permission-denied4.png)
+
 #### **Sitter Management Authorisation**
 
 | Feature | Action | Expected Result | Actual Result |
@@ -746,6 +751,10 @@ Updated the "sitter_delete" view to enforce authorisation checks. Regular authen
 **Security Fix Applied:**
 
 Restricted Sitter Management functionality to superusers only. Regular authenticated users cannot create, edit, or delete Sitter accounts and receive an authorisation error message if they attempt to access these functions.
+
+![Sitter Permisssion Denied](docs/images/testing/sitter-permission-denied5.png)
+![Sitter Permisssion Denied](docs/images/testing/sitter-permission-denied6.png)
+
 
 #### **Pets**
 | Feature | Expected Result | Test Result |
