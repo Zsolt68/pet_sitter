@@ -795,18 +795,22 @@ Restricted Sitter Management functionality to superusers only. Regular authentic
 
 The system prevents users from creating bookings where the end date occurs before the start date.
 
-![Booking End Date Validation](docs/validation/end-date-validation1.png)
-![Booking End Date Validation](docs/validation/end-date-validation2.png)
-![Booking End Date Validation](docs/validation/end-date-validation3.png)
+![Booking End Date Validation](docs/images//validation/end-date-validation1.png)
+
+![Booking End Date Validation](docs/images//validation/end-date-validation2.png)
+
+![Booking End Date Validation](docs/images//validation/end-date-validation3.png)
 
 #### **Booking Overlap Validation**
 Existing: 10–15 Jun  
 New: 14–20 Jun  
 → ❌ Rejected
 
-![Booking Overlap Validation](docs/validation/booking-overlap-validation1.png)
-![Booking Overlap Validation](docs/validation/booking-overlap-validation2.png)
-![Booking Overlap Validation](docs/validation/booking-overlap-validation3.png)
+![Booking Overlap Validation](docs/images//validation/booking-overlap-validation1.png)
+
+![Booking Overlap Validation](docs/images//validation/booking-overlap-validation2.png)
+
+![Booking Overlap Validation](docs/images//validation/booking-overlap-validation3.png)
 
 #### **Non‑Overlap**
 Existing: 10–15 Jun  
@@ -834,7 +838,7 @@ All Python files compiled successfully.
 No syntax errors were detected.
 No compilation errors were reported.
 
-![Python Validation](docs/validation/python-compileall.png)
+![Python Validation](docs/images/validation/python-compileall.png)
 
 ---
 
@@ -848,7 +852,7 @@ python manage.py check
 Result:
 System check identified no issues (0 silenced).
 
-![Python Validation](docs/validation/python-manage.png)
+![Python Validation](docs/images/validation/python-manage.png)
 
 ---
 
